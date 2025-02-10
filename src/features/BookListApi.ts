@@ -10,13 +10,8 @@ export const bookListApi = createApi({
     
       query: (id) => ({
         url: `getById?id=${id}`,
-        headers: {
-           "Referrer-Policy": "strict-origin-when-cross-origin"
-        }
+       
       })
-        
-      
-     
     })
   }),
 });

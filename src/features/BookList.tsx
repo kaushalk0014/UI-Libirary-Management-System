@@ -6,11 +6,24 @@ import { useGetBookByIdQuery} from './BookListApi';
 
 const BookList = () =>{
 
-    const { data: booklist} = useGetBookByIdQuery(9);
+    const [resData, setResDate] = React.useState<any>(null);
+
+    const { data, isSuccess} = useGetBookByIdQuery(9);
+
+    React.useEffect(()=>{
+        console.log(isSuccess);
+        if(isSuccess){
+            console.log(data);
+            console.log("----------------------------");
+            setResDate(data);
+        }
+    },[data]);
 
     return(
         <>
-            <h1>{booklist}</h1>
+            <h1>Welcome</h1><br></br>
+            <div>Id: {data?.id}</div>
+            <div>Name: {data?.name}</div>
         </>
     )
 }
