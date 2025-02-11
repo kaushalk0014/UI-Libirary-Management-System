@@ -13,8 +13,6 @@ const BookList = () =>{
     React.useEffect(()=>{
         console.log(isSuccess);
         if(isSuccess){
-            console.log(data);
-            console.log("----------------------------");
             setResDate(data);
         }
     },[data]);
