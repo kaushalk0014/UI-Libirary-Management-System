@@ -34,7 +34,13 @@ const BookList = () => {
         console.log("Edit button clicked" + id);
     }
     const deleteBook = (id: number) => {
-        console.log("Delete button clicked" + id);
+        //setInitialData((revData:any) =>revData.filter((item: any)=>(item.id !==id)));
+
+        console.log("Before filter:", id);
+        setInitialData((revData: any[]) => {
+            console.log("Before filter:", revData);
+            return revData.filter((item: any) => item.id !== id);
+          });
     }
 
     const addData = () => {
@@ -63,6 +69,7 @@ const BookList = () => {
     const setBookName = (event:any) => {
         setInitialData({
             ...initialData,
+            id: Math.floor(Math.random() * 1000),
             bookName: event.target.value
         })
     }
@@ -84,7 +91,7 @@ const BookList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {mockData.map((item: any, index: number) => (
+                    {mockData?.map((item: any, index: number) => (
                         <tr key={`key-${index + 1}`}>
                             <td style={{ border: "1px solid black" }}>{index + 1}</td>
                             <td style={{ border: "1px solid black" }}>{item.bookName}</td>
