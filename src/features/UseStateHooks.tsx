@@ -1,5 +1,6 @@
 import React from "react";
 
+import EmployeeUseStatushooks from "./EmployeeUseStatushooks";
 const UseStateHooks = () =>{
 
     const[lanluageName, setLanguageName] = React.useState<string>("JavaScript");
@@ -17,6 +18,9 @@ const UseStateHooks = () =>{
         <>
             <h1>My Favourite Language is {lanluageName}</h1>
             <button onClick={()=> changeLanguage()}>Change Language</button>
+
+            <br></br><br></br><br></br>
+            <EmployeeUseStatushooks/>
         </>
     )
 }

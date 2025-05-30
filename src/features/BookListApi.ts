@@ -1,21 +1,21 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// Define the API slice
-export const bookListApi = createApi({
-  reducerPath: 'api', 
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080/v1/app/user' }), 
-  endpoints: (builder) => ({
+// // Define the API slice
+// export const bookListApi = createApi({
+//   reducerPath: 'api', 
+//   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080/v1/app/user' }), 
+//   endpoints: (builder:any) => ({
     
-    getBookById: builder.query({
+//     getBookById: builder.query({
     
-      query: (id) => ({
-        url: `getById?id=${id}`,
+//       query: (id:any) => ({
+//         url: `getById?id=${id}`,
        
-      }),
+//       }),
       
-    })
-  }),
-});
+//     })
+//   }),
+// });
 
-// Export hooks for usage in components
-export const { useGetBookByIdQuery} = bookListApi;
+// // Export hooks for usage in components
+// export const { useGetBookByIdQuery} = bookListApi;
